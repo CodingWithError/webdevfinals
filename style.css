@@ -116,3 +116,6 @@ hr {
 .Feed-input:focus {
   outline: none;
 }
+.delete-css:hover{
+  cursor: pointer;
+}
