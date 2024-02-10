@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   let feedArr = JSON.parse(localStorage.getItem("feed")) || [];
 
-  // Function to display existing comments
+
   function displayComments() {
     feedContainer.innerHTML = ""; // Clear existing comments
     feedArr.forEach((comment) => {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function to create HTML structure for a comment
+  
   function createDiv(commentText) {
     return `
       <div class="interact">
@@ -40,23 +40,23 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }
 
-  // Display existing comments on page load
+  
   displayComments();
 
-  // Event listener for character count in textarea
+ 
   textArea.addEventListener("input", (e) => {
     const length = e.target.value.length;
     textCount.textContent = `${length}/100`;
   });
 
-  // Event listener for posting a new comment
+  
   postButton.addEventListener("click", () => {
     const commentText = textArea.value.trim();
     if (commentText) {
       feedArr.push(commentText);
       localStorage.setItem("feed", JSON.stringify(feedArr));
       displayComments();
-      textArea.value = ""; // Clear textarea after posting
+      textArea.value = ""; 
     }
   });
 });
